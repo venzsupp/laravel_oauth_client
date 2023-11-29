@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorisationCodeController;
+use App\Http\Controllers\AuthorisationTokenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/redirect', AuthorisationCodeController::class);
+Route::get('/callback', AuthorisationTokenController::class);
